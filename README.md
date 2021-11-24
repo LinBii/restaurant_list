@@ -5,7 +5,7 @@ Restaurant List is a website built with Node.js and Express for users to look fo
 ![snapshot_index](./public/snapshots/snapshot_index.png)
 ![snapshot_view](./public/snapshots/snapshot_view.png)
 
-[中文README在此](README.zh_TW.md)
+[中文README](README.zh_TW.md)
 
 ## Features
 
@@ -18,7 +18,7 @@ Restaurant List is a website built with Node.js and Express for users to look fo
 
 1. Install Node.js and npm
 2. Clone the repository to your local machine
-3. Run
+3. Open the repository in your local machine through the Terminal, and run
 
    ```bash
    npm install
