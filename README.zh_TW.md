@@ -5,7 +5,7 @@
 ![snapshot_index](./public/snapshots/snapshot_index.png)
 ![snapshot_view](./public/snapshots/snapshot_view.png)
 
-[English README](README.zh_TW.md)
+[English README](README.md)
 
 ## 功能
 
