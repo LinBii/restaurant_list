@@ -5,6 +5,8 @@ Restaurant List is a website built with Node.js and Express for users to look fo
 ![snapshot_index](./public/snapshots/snapshot_index.png)
 ![snapshot_view](./public/snapshots/snapshot_view.png)
 
+[中文README在此](README.zh_TW.md)
+
 ## Features
 
 * Check all the restaurants available

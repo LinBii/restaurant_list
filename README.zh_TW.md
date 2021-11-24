@@ -5,6 +5,8 @@
 ![snapshot_index](./public/snapshots/snapshot_index.png)
 ![snapshot_view](./public/snapshots/snapshot_view.png)
 
+[English README](README.zh_TW.md)
+
 ## 功能
 
 * 查看所有餐廳
