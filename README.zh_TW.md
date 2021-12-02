@@ -43,5 +43,5 @@
 
 * Node.js 14.16.0
 * Express 4.17.1
-* Express-Handlebars 3.0.0
+* Express-Handlebars 4.0.2
 * Bootstrap 4.2.1
