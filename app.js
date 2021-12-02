@@ -1,6 +1,7 @@
 const express = require('express')
 const exphbs = require('express-handlebars')
 const restaurantList = require('./restaurant.json')
+const Restaurant = require('./models/restaurant')
 const mongoose = require('mongoose')
 
 const app = express()
@@ -24,13 +25,16 @@ app.set('view engine', 'handlebars')
 app.use(express.static('public'))
 
 app.get('/', (req, res) => {
-  res.render('index', { restaurants: restaurantList.results })
+  Restaurant.find()
+    .lean()
+    .then(restaurants => res.render('index', { restaurants }))
+    .catch(error => console.error(error))
 })
 
 app.get('/search', (req, res) => {
   const keyword = req.query.keyword
   const restaurants = restaurantList.results.filter(restaurant => {
-    return restaurant.category.toLowerCase.includes(keyword.toLowerCase())||restaurant.name.toLowerCase().includes(keyword.toLowerCase())
+    return restaurant.category.toLowerCase.includes(keyword.toLowerCase()) || restaurant.name.toLowerCase().includes(keyword.toLowerCase())
   })
   res.render('index', { restaurants, keyword })
 })
