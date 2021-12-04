@@ -39,5 +39,8 @@
     </div>
     <a href="/restaurants/{{ restaurant._id }}/edit">Edit</a>
     <a href="/" class="ml-1">back</a>
+    <form action="/restaurants/{{ restaurant._id }}/delete" method="POST" style="display: inline;">
+      <button type="submit">Delete</button>
+    </form>
   </div>
 </div>

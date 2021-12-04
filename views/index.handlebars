@@ -42,12 +42,16 @@
             </div>
 
             <a href="/restaurants/{{ this._id }}" class="text-secondary">
-              <div class="text-primary ml-1 mb-1">Detail</div>
+              <div class="text-primary ml-1 mb-1" style="display: inline;">Detail</div>
             </a>
 
             <a href="/restaurants/{{ this._id }}/edit" class="text-secondary">
-              <div class="text-primary ml-1 mb-1">Edit</div>
+              <div class="text-primary ml-1 mb-1" style="display: inline;">Edit</div>
             </a>
+
+            <form action="/restaurants/{{ this._id }}/delete" method="POST" style="display: inline;">
+              <button type="submit">Delete</button>
+            </form>
 
           </div>
         {{/each}}
