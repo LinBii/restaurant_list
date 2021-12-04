@@ -1,13 +1,14 @@
 const express = require('express')
 const exphbs = require('express-handlebars')
+const mongoose = require('mongoose')
+const bodyParser = require('body-parser')
 const restaurantList = require('./restaurant.json')
 const Restaurant = require('./models/restaurant')
-const mongoose = require('mongoose')
 
 const app = express()
 const port = 3000
 
-mongoose.connect('mongodb://localhost/restaurant-list')
+mongoose.connect('mongodb://localhost/restaurant-list', { useNewUrlParser: true, useUnifiedTopology: true, })
 
 const db = mongoose.connection
 
@@ -23,6 +24,7 @@ app.engine('handlebars', exphbs({ defaultLayout: 'main' }))
 app.set('view engine', 'handlebars')
 
 app.use(express.static('public'))
+app.use(bodyParser.urlencoded({ extended: true }))
 
 app.get('/', (req, res) => {
   Restaurant.find()
@@ -39,11 +41,21 @@ app.get('/search', (req, res) => {
   res.render('index', { restaurants, keyword })
 })
 
+app.get('/restaurants/new', (req, res) => {
+  res.render('new')
+})
+
 app.get('/restaurants/:id', (req, res) => {
   const id = req.params.id
   return Restaurant.findById(id)
     .lean()
     .then((restaurant) => res.render('detail', { restaurant }))
+    .catch(error => console.log(error))
+})
+
+app.post('/restaurants', (req, res) => {
+  return Restaurant.create(req.body)
+    .then(() => res.redirect('/'))
     .catch(error => console.log(error))
 })
 
