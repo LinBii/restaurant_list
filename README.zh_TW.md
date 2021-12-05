@@ -11,6 +11,9 @@
 
 * 查看所有餐廳
 * 顯示餐廳的詳細資訊
+* 編輯餐廳的詳細資訊
+* 新增餐廳
+* 刪除餐廳
 * 透過Google地圖找到餐廳位置
 * 透過類別及名稱搜尋餐廳
 
@@ -35,6 +38,7 @@
 
    ```bash
    Express is listening on http://localhost:3000
+   mongodb connected!
    ```
 
 6. 若欲暫停使用，請按ctrl + c

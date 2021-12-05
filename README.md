@@ -9,8 +9,11 @@ Restaurant List is a website built with Node.js and Express for users to look fo
 
 ## Features
 
-* Check all the restaurants available
-* Show detail information of the restaurant
+* See all the restaurants in the list at a glance
+* Show detail information of a restaurant
+* Edit detail information of a restaurant
+* Add restaurant to the list
+* Delete a restaurant from the list
 * Gain access to the restaurant through Google map
 * Search for specific restaurants by category or name
 
@@ -34,6 +37,7 @@ Restaurant List is a website built with Node.js and Express for users to look fo
 
    ```bash
    Express is listening on http://localhost:3000
+   mongodb connected!
    ```
 
 6. Press ctrl + C to stop the execution
