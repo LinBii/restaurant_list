@@ -51,3 +51,4 @@ Restaurant List is a website built with Node.js and Express for users to look fo
 * MongoDB
 * Mongoose 6.0.5
 * Bootstrap 4.2.1
+* Font-awesome Latest 5.x
