@@ -25,6 +25,7 @@ app.set('view engine', 'handlebars')
 app.use(express.static('public'))
 app.use(bodyParser.urlencoded({ extended: true }))
 
+// 瀏覽全部餐廳
 app.get('/', (req, res) => {
   Restaurant.find()
     .lean()
@@ -32,6 +33,7 @@ app.get('/', (req, res) => {
     .catch(error => console.error(error))
 })
 
+// 搜尋特定餐廳
 app.get('/search', (req, res) => {
   const keyword = req.query.keyword.toLowerCase()
   
@@ -47,10 +49,12 @@ app.get('/search', (req, res) => {
     .catch(error => console.log(error))
 })
 
+// 新增餐廳頁面
 app.get('/restaurants/new', (req, res) => {
   res.render('new')
 })
 
+// 瀏覽特定餐廳資訊
 app.get('/restaurants/:id', (req, res) => {
   const id = req.params.id
   return Restaurant.findById(id)
@@ -59,6 +63,7 @@ app.get('/restaurants/:id', (req, res) => {
     .catch(error => console.log(error))
 })
 
+// 編輯特定餐廳資訊
 app.get('/restaurants/:id/edit', (req, res) => {
   const id = req.params.id
   return Restaurant.findById(id)
@@ -67,12 +72,14 @@ app.get('/restaurants/:id/edit', (req, res) => {
     .catch(error => console.log(error))
 })
 
+// 新增餐廳
 app.post('/restaurants', (req, res) => {
   return Restaurant.create(req.body)
     .then(() => res.redirect('/'))
     .catch(error => console.log(error))
 })
 
+// 更新餐廳資訊
 app.post('/restaurants/:id/edit', (req, res) => {
   const id = req.params.id
   return Restaurant.findById(id)
@@ -92,6 +99,7 @@ app.post('/restaurants/:id/edit', (req, res) => {
     .catch(error => console.log(error))
 })
 
+// 刪除餐廳
 app.post('/restaurants/:id/delete', (req, res) => {
   const id = req.params.id
   return Restaurant.findById(id)
