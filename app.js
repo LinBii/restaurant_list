@@ -3,6 +3,8 @@ const exphbs = require('express-handlebars')
 const mongoose = require('mongoose')
 const bodyParser = require('body-parser')
 const Restaurant = require('./models/restaurant')
+// load method-override
+const methodOverride = require('method-override')
 
 const app = express()
 const port = 3000
@@ -24,6 +26,8 @@ app.set('view engine', 'handlebars')
 
 app.use(express.static('public'))
 app.use(bodyParser.urlencoded({ extended: true }))
+
+app.use(methodOverride('_method'))
 
 // 瀏覽全部餐廳
 app.get('/', (req, res) => {

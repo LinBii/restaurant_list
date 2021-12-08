@@ -48,7 +48,7 @@
           <a href="/restaurants/{{ this._id }}" class="text-secondary">
             <div class="text-primary ml-2" style="display: inline;">Detail</div>
           </a>
-          <form action="/restaurants/{{ this._id }}/delete" method="POST" class="ml-2" style="display: inline;">
+          <form action="/restaurants/{{ this._id }}?_method=DELETE" method="POST" class="ml-2" style="display: inline;">
             <button type="submit">Delete</button>
           </form>
         </div>
