@@ -32,9 +32,6 @@ router.get('/search', (req, res) => {
     .catch(error => console.log(error))
 })
 
-router.use('/', function (req, res) {
-  res.status(404)
-  res.render('404')
-})
+
 
 module.exports = router
