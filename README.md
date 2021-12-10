@@ -4,6 +4,7 @@ Restaurant List is a website built with Node.js and Express for users to look fo
 
 ![snapshot_index](./public/snapshots/snapshot_index.png)
 ![snapshot_view](./public/snapshots/snapshot_view.png)
+![snapshot_create](./public/snapshots/snapshot_create.png)
 
 [中文README](README.zh_TW.md)
 
@@ -49,6 +50,6 @@ Restaurant List is a website built with Node.js and Express for users to look fo
 * Express 4.17.1
 * Express-Handlebars 4.0.2
 * MongoDB
-* Mongoose 6.0.5
+* Mongoose 6.0.14
 * Bootstrap 4.2.1
 * Font-awesome Latest 5.x
