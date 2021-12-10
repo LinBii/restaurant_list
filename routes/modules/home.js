@@ -15,6 +15,11 @@ router.get('/', (req, res) => {
 router.get('/search', (req, res) => {
   const keyword = req.query.keyword.toLowerCase()
 
+  if (keyword === '') {
+    res.redirect('/')
+    return
+  }
+
   Restaurant.find()
     .lean()
     .then(restaurants => {
@@ -25,6 +30,11 @@ router.get('/search', (req, res) => {
       res.render('index', { restaurants: filteredData, keyword })
     })
     .catch(error => console.log(error))
+})
+
+router.use('/', function (req, res) {
+  res.status(404)
+  res.render('404')
 })
 
 module.exports = router
