@@ -35,11 +35,6 @@ header {
   color: #9b4b4b;
 }
 
-.form-control {
-  width: 500px;
-  margin: auto;
-}
-
 .form-control::placeholder {
   color: #aaaaaa;
   font-size: 0.8rem;
